@@ -31,9 +31,9 @@ h1{font-size:clamp(54px,10vw,112px);line-height:.92;margin:18px 0 8px}
 .names{font-weight:400;color:var(--brown)}
 .countdown-card{margin:28px auto 0;max-width:560px;background:linear-gradient(135deg,#fff,#fbf0df);border:1px solid rgba(200,167,106,.35);border-radius:28px;padding:22px;box-shadow:0 12px 28px rgba(90,61,35,.09)}
 .countdown-title{text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--gold);font-weight:500;margin-bottom:12px}
-.countdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .count-box{background:var(--cream);border:1px solid rgba(123,87,55,.12);border-radius:20px;padding:14px 8px}
-.count-number{display:block;font-family:'Charlesworth','Playfair Display',serif;font-size:34px;color:var(--brown);line-height:1}
+.count-number{display:block;font-family:'Charlesworth','Playfair Display',serif;font-size:30px;color:var(--brown);line-height:1;font-variant-numeric:tabular-nums}
 .count-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
 .whatsapp-wrap{margin-top:18px;text-align:center}
 .whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:white}
@@ -210,9 +210,10 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
     <div class="countdown-card">
       <div class="countdown-title">Countdown to Baby Kobamelo</div>
       <div class="countdown-grid">
-        <div class="count-box"><span class="count-number">11</span><span class="count-label">Weeks</span></div>
-        <div class="count-box"><span class="count-number">6</span><span class="count-label">Days</span></div>
-        <div class="count-box"><span class="count-number">83</span><span class="count-label">Total Days</span></div>
+        <div class="count-box"><span class="count-number" id="count-days">83</span><span class="count-label">Days</span></div>
+        <div class="count-box"><span class="count-number" id="count-hours">00</span><span class="count-label">Hours</span></div>
+        <div class="count-box"><span class="count-number" id="count-minutes">00</span><span class="count-label">Minutes</span></div>
+        <div class="count-box"><span class="count-number" id="count-seconds">00</span><span class="count-label">Seconds</span></div>
       </div>
     </div>
     <div class="whatsapp-wrap">
@@ -984,6 +985,33 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  // Live countdown to the expected arrival of Baby Kobamelo.
+  // Recomputes every second so it always reflects the real time remaining
+  // and visibly ticks down rather than appearing frozen.
+  (function startCountdown() {
+    var dueDate = new Date('2026-09-06T00:00:00');
+    var daysEl = document.getElementById('count-days');
+    var hoursEl = document.getElementById('count-hours');
+    var minutesEl = document.getElementById('count-minutes');
+    var secondsEl = document.getElementById('count-seconds');
+    if (!daysEl || !hoursEl || !minutesEl || !secondsEl) {
+      return;
+    }
+    function pad(n) {
+      return n < 10 ? '0' + n : String(n);
+    }
+    function tick() {
+      var diff = Math.max(0, dueDate.getTime() - Date.now());
+      var totalSeconds = Math.floor(diff / 1000);
+      daysEl.textContent = Math.floor(totalSeconds / 86400);
+      hoursEl.textContent = pad(Math.floor((totalSeconds % 86400) / 3600));
+      minutesEl.textContent = pad(Math.floor((totalSeconds % 3600) / 60));
+      secondsEl.textContent = pad(totalSeconds % 60);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
   var status = document.getElementById('registry-status');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.gift-card'));
   var tokenKey = 'baby-kobamelo-guest-token-v1';

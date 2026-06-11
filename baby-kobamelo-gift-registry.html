@@ -240,7 +240,7 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
       <h2>🧸 Reserved Gifts</h2>
       <p>Gold segments show how many gifts have been reserved.</p>
       <div class="progress-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span><span class="d6"></span><span class="d7"></span><span class="d8"></span><span class="d9"></span><span class="d10"></span><span class="d11"></span><span class="d12"></span><span class="d13"></span><span class="d14"></span><span class="d15"></span><span class="d16"></span><span class="d17"></span><span class="d18"></span><span class="d19"></span><span class="d20"></span><span class="d21"></span><span class="d22"></span><span class="d23"></span><span class="d24"></span><span class="d25"></span><span class="d26"></span><span class="d27"></span><span class="d28"></span></div>
-      <p>Tap “Reserve gift” to fill a segment.<br>Your reservations will stay saved after refresh on this device.</p>
+      <p>Tap “Reserve gift” to fill a segment.</p>
     </section>
     <h2 class="section-title">🧸 Gift List</h2>
     <p class="section-sub">Choose a category below.<br>Open the store link.<br>Mark the gift reserved.</p>
@@ -1149,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      setStatus('Current reservations loaded.');
+      setStatus('');
     } catch (error) {
       console.error(error);
       setStatus('Reservations are not connected yet. Check Netlify Functions deployment.');

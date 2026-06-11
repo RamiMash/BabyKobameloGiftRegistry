@@ -1092,9 +1092,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (reservedBy) {
       reservedBy.textContent = reservation.guestName ? ('Reserved by ' + reservation.guestName) : 'Reserved';
-      if (isOwner) {
-        reservedBy.textContent += ' — you can unreserve this gift';
-      }
     }
 
     setDot(giftId, true);

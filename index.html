@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baby Kobamelo Gift Registry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fffaf2;--cream:#f8efe3;--gold:#c8a76a;--brown:#7b5737;--soft:#a78665;--shadow:0 18px 45px rgba(90,61,35,.13)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',sans-serif;font-weight:300;background:radial-gradient(circle at 12% 10%,rgba(200,167,106,.18),transparent 22%),radial-gradient(circle at 87% 4%,rgba(232,213,189,.45),transparent 20%),linear-gradient(180deg,var(--ivory),#fff);color:#5e432c}
+h1,h2,h3{font-family:'Charlesworth','Playfair Display',serif;letter-spacing:.02em;color:var(--brown)}
+p{line-height:1.8}
+.hero{min-height:90vh;display:grid;place-items:center;text-align:center;padding:44px 20px;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:54px;height:70px;border-radius:50% 50% 48% 48%;opacity:.72;animation:float 5s ease-in-out infinite;box-shadow:inset -8px -10px 0 rgba(123,87,55,.08),0 12px 28px rgba(90,61,35,.08)}
+.hero:before{left:8%;top:10%;background:linear-gradient(145deg,#f7ead7,#c8a76a)}
+.hero:after{right:10%;top:15%;animation-delay:1.4s;background:linear-gradient(145deg,#fff7ea,#d9c4a3)}
+@keyframes float{50%{transform:translateY(-18px)}}
+.theme-balloon{position:absolute;width:42px;height:55px;border-radius:50% 50% 48% 48%;opacity:.55;pointer-events:none;animation:float 6s ease-in-out infinite;box-shadow:inset -7px -9px 0 rgba(123,87,55,.07),0 10px 22px rgba(90,61,35,.07)}
+.theme-balloon:after{content:"";position:absolute;left:50%;bottom:-20px;height:22px;width:1px;background:rgba(123,87,55,.22)}
+.balloon-champagne{background:linear-gradient(145deg,#fff8ed,#e8d5bd);left:18%;bottom:16%;animation-delay:.6s}
+.balloon-gold{background:linear-gradient(145deg,#f4dfb6,#c8a76a);right:20%;bottom:20%;animation-delay:1.2s}
+.balloon-taupe{background:linear-gradient(145deg,#ead9c6,#a78665);left:48%;top:12%;animation-delay:1.8s}
+.hero-card{background:rgba(255,255,255,.78);border:1px solid rgba(200,167,106,.35);border-radius:36px;padding:42px 24px;width:min(920px,100%);box-shadow:var(--shadow)}
+.eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:12px;color:var(--gold);font-weight:500}
+h1{font-size:clamp(54px,10vw,112px);line-height:.92;margin:18px 0 8px}
+.subtitle{font-size:18px;max-width:680px;margin:0 auto 24px;line-height:1.8}
+.teddy{font-size:64px;margin:10px 0;color:var(--gold)}
+.names{font-weight:400;color:var(--brown)}
+.countdown-card{margin:28px auto 0;max-width:560px;background:linear-gradient(135deg,#fff,#fbf0df);border:1px solid rgba(200,167,106,.35);border-radius:28px;padding:22px;box-shadow:0 12px 28px rgba(90,61,35,.09)}
+.countdown-title{text-transform:uppercase;letter-spacing:.2em;font-size:11px;color:var(--gold);font-weight:500;margin-bottom:12px}
+.countdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.count-box{background:var(--cream);border:1px solid rgba(123,87,55,.12);border-radius:20px;padding:14px 8px}
+.count-number{display:block;font-family:'Charlesworth','Playfair Display',serif;font-size:34px;color:var(--brown);line-height:1}
+.count-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
+.whatsapp-wrap{margin-top:18px;text-align:center}
+.whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:white}
+.whatsapp-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--gold);border-radius:50%;font-size:13px;font-weight:500;box-shadow:0 2px 8px rgba(90,61,35,.10)}
+.whatsapp-note{margin:9px 0 0;font-size:13px;color:var(--soft);font-style:italic}
+.wrap{max-width:1120px;margin:auto;padding:34px 18px}
+.section-title{text-align:center;font-size:42px;margin:20px 0 10px}
+.section-sub{text-align:center;max-width:760px;margin:0 auto 30px;line-height:1.7}
+.voucher,.progress,.reserve-progress{background:linear-gradient(135deg,#fff,#fbf3e8);border:1px solid rgba(200,167,106,.35);border-radius:28px;padding:26px;box-shadow:var(--shadow);margin-bottom:26px;text-align:center}
+.voucher h2,.progress h2,.reserve-progress h2{font-size:34px;margin:0 0 8px}
+.progress-dots{display:grid;grid-template-columns:repeat(28,1fr);gap:4px;max-width:700px;margin:16px auto 0}
+.progress-dots span{height:10px;border-radius:999px;background:#eadcc9}
+.registry:has(#gift-1:checked) .d1,
+.registry:has(#gift-2:checked) .d2,
+.registry:has(#gift-3:checked) .d3,
+.registry:has(#gift-4:checked) .d4,
+.registry:has(#gift-5:checked) .d5,
+.registry:has(#gift-6:checked) .d6,
+.registry:has(#gift-7:checked) .d7,
+.registry:has(#gift-8:checked) .d8,
+.registry:has(#gift-9:checked) .d9,
+.registry:has(#gift-10:checked) .d10,
+.registry:has(#gift-11:checked) .d11,
+.registry:has(#gift-12:checked) .d12,
+.registry:has(#gift-13:checked) .d13,
+.registry:has(#gift-14:checked) .d14,
+.registry:has(#gift-15:checked) .d15,
+.registry:has(#gift-16:checked) .d16,
+.registry:has(#gift-17:checked) .d17,
+.registry:has(#gift-18:checked) .d18,
+.registry:has(#gift-19:checked) .d19,
+.registry:has(#gift-20:checked) .d20,
+.registry:has(#gift-21:checked) .d21,
+.registry:has(#gift-22:checked) .d22,
+.registry:has(#gift-23:checked) .d23,
+.registry:has(#gift-24:checked) .d24,
+.registry:has(#gift-25:checked) .d25{background:linear-gradient(90deg,var(--gold),#d7bc84)}
+.filter-radio{position:absolute;opacity:0;pointer-events:none}
+.filters{display:flex;gap:10px;overflow:auto;padding:8px 0 26px;margin:0 auto 10px;position:sticky;top:0;background:rgba(255,250,242,.95);z-index:2}
+.filters label{white-space:nowrap;border:1px solid rgba(123,87,55,.18);background:#fff;color:var(--brown);border-radius:999px;padding:10px 14px;font-family:'Poppins';font-weight:300;font-size:14px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+#filter-all:checked ~ .filters label[for="filter-all"],#filter-feeding:checked ~ .filters label[for="filter-feeding"],#filter-soothers:checked ~ .filters label[for="filter-soothers"],#filter-sleep:checked ~ .filters label[for="filter-sleep"],#filter-play:checked ~ .filters label[for="filter-play"],#filter-nappy:checked ~ .filters label[for="filter-nappy"],#filter-travel:checked ~ .filters label[for="filter-travel"],#filter-clothing:checked ~ .filters label[for="filter-clothing"]{background:var(--brown);color:#fff;border-color:var(--brown)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+#filter-feeding:checked ~ .grid .gift-card:not(.feeding),#filter-soothers:checked ~ .grid .gift-card:not(.soothers),#filter-sleep:checked ~ .grid .gift-card:not(.sleep),#filter-play:checked ~ .grid .gift-card:not(.play),#filter-nappy:checked ~ .grid .gift-card:not(.nappy),#filter-travel:checked ~ .grid .gift-card:not(.travel),#filter-clothing:checked ~ .grid .gift-card:not(.clothing){display:none}
+.gift-card{position:relative}
+.reserve-check{position:absolute;opacity:0;pointer-events:none}
+.gift-inner{background:#fff;border:1px solid rgba(200,167,106,.22);border-radius:26px;padding:20px;box-shadow:0 12px 28px rgba(90,61,35,.09);transition:.2s;height:100%}
+.reserve-check:checked + .gift-inner{background:#fbf5eb;border-color:rgba(200,167,106,.65)}
+.reserve-check:checked + .gift-inner h3:after{content:" ✓";color:var(--gold)}
+.tag{display:inline-block;background:var(--cream);color:var(--brown);border-radius:999px;padding:7px 11px;font-size:11px;margin-bottom:12px}
+.tag:before{content:"🧸 ";opacity:.7}
+.gift-card h3{font-size:23px;margin:4px 0 10px;line-height:1.15}
+.store{margin:0;color:var(--soft);font-weight:400}
+.price{margin:7px 0 16px;color:var(--brown);font-weight:500}
+.card-actions{display:flex;gap:10px;flex-wrap:wrap}
+a,.reserve-label{border:none;border-radius:999px;padding:11px 15px;text-decoration:none;cursor:pointer;font-family:'Poppins';font-weight:300;font-size:14px;display:inline-block;-webkit-tap-highlight-color:transparent;user-select:none}
+.view{background:var(--brown);color:white}
+.reserve-label{background:var(--gold);color:white}
+.reserve-label .reserved{display:none}
+.reserve-check:checked + .gift-inner .reserve-label{background:#8b6a43}
+.reserve-check:checked + .gift-inner .reserve-label .unreserved{display:none}
+.reserve-check:checked + .gift-inner .reserve-label .reserved{display:inline}
+.gift-note-area{margin-top:14px;padding-top:14px;border-top:1px solid rgba(200,167,106,.22)}
+.gift-note-area label{display:block;font-size:12px;color:var(--soft);margin:8px 0 5px}
+.gift-note-area input,.gift-note-area textarea{width:100%;border:1px solid rgba(123,87,55,.16);background:#fffaf4;border-radius:14px;padding:10px 12px;font-family:'Poppins',sans-serif;font-weight:300;color:var(--brown);outline:none}
+.gift-note-area textarea{min-height:64px;resize:vertical}
+.gift-note-area input:focus,.gift-note-area textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,167,106,.12)}
+footer{text-align:center;padding:38px 18px;color:var(--soft)}
+@media(max-width:520px){.count-number{font-size:30px}.count-label{font-size:10px}.progress-dots{grid-template-columns:repeat(13,1fr)}}
+
+.chic-emoji{
+  position:absolute;
+  pointer-events:none;
+  opacity:.20;
+  font-size:28px;
+  animation:float 7s ease-in-out infinite;
+}
+.emoji-bottle{left:13%;top:28%;animation-delay:.4s}
+.emoji-pacifier{right:14%;bottom:25%;animation-delay:1s}
+.emoji-moon{left:11%;bottom:20%;animation-delay:1.5s}
+
+
+.progress-dots span.saved-reserved{
+  background:linear-gradient(90deg,var(--gold),#d7bc84) !important;
+}
+
+
+.name-required-note{
+  display:block;
+  margin-top:5px;
+  font-size:11px;
+  color:var(--soft);
+}
+.gift-card.server-reserved .name-required-note{
+  display:none !important;
+}
+.gift-card.server-reserved .gift-inner{
+  background:#fbf5eb;
+  border-color:rgba(200,167,106,.75);
+}
+.gift-card.server-reserved .reserve-label{
+  background:#8b6a43;
+  cursor:not-allowed;
+}
+.gift-card.server-reserved .guest-name,
+.gift-card.server-reserved .guest-note{
+  background:#f8efe3;
+}
+.reserved-by{
+  display:none;
+  margin-top:10px;
+  font-size:12px;
+  color:var(--soft);
+  font-style:italic;
+}
+.gift-card.server-reserved .reserved-by{
+  display:block;
+}
+.registry-status{
+  text-align:center;
+  margin:8px auto 18px;
+  font-size:13px;
+  color:var(--soft);
+}
+.progress-dots span.saved-reserved{
+  background:linear-gradient(90deg,var(--gold),#d7bc84) !important;
+}
+.reserve-label.is-saving{
+  opacity:.75;
+  pointer-events:none;
+}
+
+
+.unreserve-label{
+  display:none;
+  border:none;
+  border-radius:999px;
+  padding:11px 15px;
+  text-decoration:none;
+  cursor:pointer;
+  font-family:'Poppins';
+  font-weight:300;
+  font-size:14px;
+  background:#8b6a43;
+  color:white;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+.gift-card.owned-reservation .unreserve-label{
+  display:inline-block;
+}
+.gift-card.owned-reservation .reserve-label{
+  display:none;
+}
+.gift-card.server-reserved:not(.owned-reservation) .reserve-label{
+  cursor:not-allowed;
+}
+
+</style>
+</head>
+<body>
+<section class="hero">
+  <span class="theme-balloon balloon-champagne"></span>
+  <span class="theme-balloon balloon-gold"></span>
+  <span class="theme-balloon balloon-taupe"></span>
+  <span class="chic-emoji emoji-bottle">🍼</span>
+  <span class="chic-emoji emoji-pacifier">🧸</span>
+  <span class="chic-emoji emoji-moon">👶</span>
+  <div class="hero-card">
+    <div class="eyebrow">Gift Registry</div>
+    <h1>Baby Kobamelo</h1>
+    <div class="teddy">🧸</div>
+    <p class="subtitle">Welcome to our little one's registry.<br>Thank you for celebrating this beautiful journey with us.<br>We are preparing to welcome Baby Kobamelo in September 2026.</p>
+    <p class="names">With love, Hlake & Kopano</p>
+    <div class="countdown-card">
+      <div class="countdown-title">Countdown to Baby Kobamelo</div>
+      <div class="countdown-grid">
+        <div class="count-box"><span class="count-number">11</span><span class="count-label">Weeks</span></div>
+        <div class="count-box"><span class="count-number">6</span><span class="count-label">Days</span></div>
+        <div class="count-box"><span class="count-number">83</span><span class="count-label">Total Days</span></div>
+      </div>
+    </div>
+    <div class="whatsapp-wrap">
+      <a class="whatsapp" href="https://wa.me/27832444448?text=Hi%20Hlake%20%26%20Kopano%2C%20I%27d%20like%20to%20ask%20about%20Baby%20Kobamelo%27s%20registry%20%F0%9F%A7%B8" target="_blank" rel="noopener">
+        <span class="whatsapp-icon">💬</span>
+        <span>Message on WhatsApp</span>
+      </a>
+      <p class="whatsapp-note">For any question you may have,<br>ask here</p>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section class="voucher">
+    <h2>🍼 BabiesRUs Gift Voucher</h2>
+    <p>Prefer to contribute flexibly?<br>A BabiesRUs gift voucher is warmly appreciated for Baby Kobamelo’s essentials.</p>
+  </section>
+  <section class="progress">
+    <h2>🧷 Registry Note</h2>
+    <p>Add your <strong>name</strong> before reserving a gift.<br>One gift can only be reserved once.<br>You may reserve more than one gift.</p>
+  </section>
+  <section class="registry">
+    <section class="reserve-progress">
+      <h2>🧸 Reserved Gifts</h2>
+      <p>Gold segments show how many gifts have been reserved.</p>
+      <div class="progress-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span><span class="d6"></span><span class="d7"></span><span class="d8"></span><span class="d9"></span><span class="d10"></span><span class="d11"></span><span class="d12"></span><span class="d13"></span><span class="d14"></span><span class="d15"></span><span class="d16"></span><span class="d17"></span><span class="d18"></span><span class="d19"></span><span class="d20"></span><span class="d21"></span><span class="d22"></span><span class="d23"></span><span class="d24"></span><span class="d25"></span><span class="d26"></span><span class="d27"></span><span class="d28"></span></div>
+      <p>Tap “Reserve gift” to fill a segment.<br>Your reservations will stay saved after refresh on this device.</p>
+    </section>
+    <h2 class="section-title">🧸 Gift List</h2>
+    <p class="section-sub">Choose a category below.<br>Open the store link.<br>Mark the gift reserved.</p>
+    <div class="registry-status" id="registry-status">Loading current reservations...</div>
+
+    <input class="filter-radio" type="radio" name="filter" id="filter-all" checked>
+    <input class="filter-radio" type="radio" name="filter" id="filter-feeding">
+    <input class="filter-radio" type="radio" name="filter" id="filter-soothers">
+    <input class="filter-radio" type="radio" name="filter" id="filter-sleep">
+    <input class="filter-radio" type="radio" name="filter" id="filter-play">
+    <input class="filter-radio" type="radio" name="filter" id="filter-nappy">
+    <input class="filter-radio" type="radio" name="filter" id="filter-travel">
+    <input class="filter-radio" type="radio" name="filter" id="filter-clothing">
+
+    <nav class="filters">
+      <label for="filter-all">All</label>
+      <label for="filter-feeding">🍼 Feeding & Bottles</label>
+      <label for="filter-soothers">🧸 Soothers & Comfort</label>
+      <label for="filter-sleep">👶 Sleep & Nursery</label>
+      <label for="filter-play">🧸 Seating & Play</label>
+      <label for="filter-nappy">👶 Nappy Changing</label>
+      <label for="filter-travel">👶 Travel & Gear</label>
+      <label for="filter-clothing">👶 Clothing & Essentials</label>
+    </nav>
+
+    <section class="grid">
+      
+<article class="gift-card feeding">
+  <input class="reserve-check" type="checkbox" id="gift-1">
+  <div class="gift-inner">
+    <div class="tag">Feeding &amp; Bottles</div>
+    <h3>BIBS Glass Baby Bottle Set 110ml – Sage</h3>
+    <p class="store">Baby &amp; Bear</p>
+    <p class="price">R360.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://babyandbear.co.za/product/bibs-baby-glass-bottle-complete-set-110ml-sage/" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-1">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card feeding">
+  <input class="reserve-check" type="checkbox" id="gift-2">
+  <div class="gift-inner">
+    <div class="tag">Feeding &amp; Bottles</div>
+    <h3>Baby Bottle Sleeve Small – Sage</h3>
+    <p class="store">Baby &amp; Bear</p>
+    <p class="price">R200.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://babyandbear.co.za/product/baby-bottle-sleeve-small-sage/" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-2">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card feeding">
+  <input class="reserve-check" type="checkbox" id="gift-3">
+  <div class="gift-inner">
+    <div class="tag">Feeding &amp; Bottles</div>
+    <h3>Eufy Wearable Breast Pump S1</h3>
+    <p class="store">iStore</p>
+    <p class="price">R3,999.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.istore.co.za/eufy-wearable-breast-pump-e20-aebt6060321" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-3">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card soothers">
+  <input class="reserve-check" type="checkbox" id="gift-4">
+  <div class="gift-inner">
+    <div class="tag">Soothers &amp; Comfort</div>
+    <h3>BIBS Colour Pacifiers 4-Pack – Ivory/Sand/Vanilla/Dark Oak</h3>
+    <p class="store">Bubba Due</p>
+    <p class="price">R499.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://bubbadue.com/products/bibs-colour-pacifiers-dummies-4-pack-ivory-sand-vanilla-dark-oak" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-4">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card soothers">
+  <input class="reserve-check" type="checkbox" id="gift-5">
+  <div class="gift-inner">
+    <div class="tag">Soothers &amp; Comfort</div>
+    <h3>Plush Character Snuggle Pillow – Assorted</h3>
+    <p class="store">Babies R Us / Toys R Us</p>
+    <p class="price">R419.90</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.babiesrus.co.za/plush-character-snuggle-pillow-assorted-1169634" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-5">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card sleep">
+  <input class="reserve-check" type="checkbox" id="gift-6">
+  <div class="gift-inner">
+    <div class="tag">Sleep &amp; Nursery</div>
+    <h3>Cullami Co-Sleeper</h3>
+    <p class="store">CBBaby</p>
+    <p class="price">R7,995.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://cbbaby.co.za/products/cullami-co-sleeper" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-6">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card sleep">
+  <input class="reserve-check" type="checkbox" id="gift-7">
+  <div class="gift-inner">
+    <div class="tag">Sleep &amp; Nursery</div>
+    <h3>Embossed Standard Camp Cot Mattress</h3>
+    <p class="store">Chelino</p>
+    <p class="price">R499.99</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.chelino.co.za/products/embossed-camp-cot-mattress" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-7">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card sleep">
+  <input class="reserve-check" type="checkbox" id="gift-8">
+  <div class="gift-inner">
+    <div class="tag">Sleep &amp; Nursery</div>
+    <h3>Baby Safe Nest Sleeping Pod – Beige Checkered</h3>
+    <p class="store">Cinnamon &amp; Spice</p>
+    <p class="price">R650.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://cinnaspice.co.za/shop/baby/baby-room-nursery/cot-and-crib-everything-for-cot-your-crib/baby-nest-pod/baby-safe-nest-safe-sleeping-pod-beige-checkered/" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-8">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card play">
+  <input class="reserve-check" type="checkbox" id="gift-9">
+  <div class="gift-inner">
+    <div class="tag">Seating &amp; Play</div>
+    <h3>Royal 3-in-1 Swing &amp; High Chair – Beige</h3>
+    <p class="store">Chelino</p>
+    <p class="price">R3,749.99 on sale</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.chelino.co.za/products/royal-3-in-1-swing-and-high-chair-beige" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-9">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card play">
+  <input class="reserve-check" type="checkbox" id="gift-10">
+  <div class="gift-inner">
+    <div class="tag">Seating &amp; Play</div>
+    <h3>The Lumi Seat 5-in-1 Multifunctional Baby Chair</h3>
+    <p class="store">Noola</p>
+    <p class="price">R1,990.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.noola.co.za/products/the-lumi-seat-5in1-multifunctional-baby-chair" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-10">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card play">
+  <input class="reserve-check" type="checkbox" id="gift-11">
+  <div class="gift-inner">
+    <div class="tag">Seating &amp; Play</div>
+    <h3>Little Dutch Play Gym</h3>
+    <p class="store">Kidoco</p>
+    <p class="price">R1,255.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://kidoco.co.za/products/little-dutch-play-gym" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-11">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card nappy">
+  <input class="reserve-check" type="checkbox" id="gift-12">
+  <div class="gift-inner">
+    <div class="tag">Nappy Changing &amp; Storage</div>
+    <h3>Bouclé Diaper Caddy</h3>
+    <p class="store">Pink Foot</p>
+    <p class="price">R450.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://pink-foot.co.za/products/boucle-diaper-caddy" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-12">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card nappy">
+  <input class="reserve-check" type="checkbox" id="gift-13">
+  <div class="gift-inner">
+    <div class="tag">Nappy Changing &amp; Storage</div>
+    <h3>Bumbo Changing Pad – Taupe</h3>
+    <p class="store">Babies R Us</p>
+    <p class="price">R999.90</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.babiesrus.co.za/bumbo-changing-pad-taupe-3006578" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-13">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card nappy">
+  <input class="reserve-check" type="checkbox" id="gift-14">
+  <div class="gift-inner">
+    <div class="tag">Nappy Changing &amp; Storage</div>
+    <h3>Shnuggle Eco-Touch Nappy Bin</h3>
+    <p class="store">Pink Foot</p>
+    <p class="price">R1,500.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://pink-foot.co.za/products/shnuggle-eco-touch-nappy-bin" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-14">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card nappy">
+  <input class="reserve-check" type="checkbox" id="gift-15">
+  <div class="gift-inner">
+    <div class="tag">Nappy Changing &amp; Storage</div>
+    <h3>Rainbow Rope Laundry Basket with Lid (Neutral)</h3>
+    <p class="store">JanaS</p>
+    <p class="price">R1,199.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.janas.co.za/products/rainbow-rope-laundry-basket-with-lid" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-15">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card feeding">
+  <input class="reserve-check" type="checkbox" id="gift-16">
+  <div class="gift-inner">
+    <div class="tag">Feeding &amp; Bottles</div>
+    <h3>Nanobebe Flexy Silicone Bottle 150ml – Grey Twin Pack</h3>
+    <p class="store">Dis-Chem</p>
+    <p class="price">R399.99</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.dischem.co.za/nanobebe-flexy-silicone-bottle-150ml-grey-twin-pack-634" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-16">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card clothing">
+  <input class="reserve-check" type="checkbox" id="gift-17">
+  <div class="gift-inner">
+    <div class="tag">Clothing &amp; Essentials</div>
+    <h3>Novelty Face Cloths</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R100.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-509773206" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-17">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card clothing">
+  <input class="reserve-check" type="checkbox" id="gift-18">
+  <div class="gift-inner">
+    <div class="tag">Clothing &amp; Essentials</div>
+    <h3>Novelty Hooded Towel</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R179.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-510920552" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-18">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card clothing">
+  <input class="reserve-check" type="checkbox" id="gift-19">
+  <div class="gift-inner">
+    <div class="tag">Clothing &amp; Essentials</div>
+    <h3>Muslin Hooded Towel</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R259.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-511200302" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-19">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card travel">
+  <input class="reserve-check" type="checkbox" id="gift-20">
+  <div class="gift-inner">
+    <div class="tag">Travel &amp; Gear</div>
+    <h3>Waterproof Baby Changing Pad</h3>
+    <p class="store">Amazon</p>
+    <p class="price">R100.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://amzn.eu/d/00MuFxfY" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-20">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card feeding">
+  <input class="reserve-check" type="checkbox" id="gift-21">
+  <div class="gift-inner">
+    <div class="tag">Feeding &amp; Bottles</div>
+    <h3>Momcozy KleanPal Pro Baby Bottle Washer – EU Plug</h3>
+    <p class="store">Chelino</p>
+    <p class="price">R6,000.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.chelino.co.za/products/momcozy-kleanpal-pro-baby-bottle-washer-eu-plug" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-21">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card travel">
+  <input class="reserve-check" type="checkbox" id="gift-22">
+  <div class="gift-inner">
+    <div class="tag">Travel &amp; Gear</div>
+    <h3>Bundled Baby Development Books</h3>
+    <p class="store">Amazon</p>
+    <p class="price">R850.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://amzn.eu/d/0049vADi" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-22">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card travel">
+  <input class="reserve-check" type="checkbox" id="gift-23">
+  <div class="gift-inner">
+    <div class="tag">Travel &amp; Gear</div>
+    <h3>Bebus Travel System Bundle</h3>
+    <p class="store">Bebebus</p>
+    <p class="price">R11,000.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.bebebus.co.za/products/travel-system-bundle" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-23">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card clothing">
+  <input class="reserve-check" type="checkbox" id="gift-24">
+  <div class="gift-inner">
+    <div class="tag">Clothing &amp; Essentials</div>
+    <h3>Stainless Steel Flask</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R400.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-509793254" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-24">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card travel">
+  <input class="reserve-check" type="checkbox" id="gift-25">
+  <div class="gift-inner">
+    <div class="tag">Travel &amp; Gear</div>
+    <h3>Portable Baby Carrier Toddler Wrap – Multifunctional Shoulders (Khaki)</h3>
+    <p class="store">Takealot</p>
+    <p class="price">R550.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.takealot.com/portable-baby-carrier-toddler-wrap-shoulders-multifunctional-str/PLID100560347" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-25">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+    
+<article class="gift-card nappy">
+  <input class="reserve-check" type="checkbox" id="gift-26">
+  <div class="gift-inner">
+    <div class="tag">Bath & Nursery</div>
+    <h3>Bath Stand - Emerald Baby</h3>
+    <p class="store">Baby's Closet</p>
+    <p class="price">R1,000.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://babyscloset.co.za/products/bath-stand-emerald-baby" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-26">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card clothing">
+  <input class="reserve-check" type="checkbox" id="gift-27">
+  <div class="gift-inner">
+    <div class="tag">Clothing & Essentials</div>
+    <h3>Fringe Muslin Blanket</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R299.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-511198218" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-27">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card feeding">
+  <input class="reserve-check" type="checkbox" id="gift-28">
+  <div class="gift-inner">
+    <div class="tag">Feeding & Bottles</div>
+    <h3>Baby Nurture Deluxe Bottle Brush</h3>
+    <p class="store">Amazon</p>
+    <p class="price">R145.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://amzn.eu/d/0fIVjlqq" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-28">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+</section>
+  </section>
+</main>
+<footer>Made with love for Baby Kobamelo 🧸🍼</footer>
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var status = document.getElementById('registry-status');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.gift-card'));
+  var tokenKey = 'baby-kobamelo-guest-token-v1';
+
+  function getGuestToken() {
+    var token = localStorage.getItem(tokenKey);
+    if (!token) {
+      token = 'guest-' + Date.now() + '-' + Math.random().toString(36).slice(2);
+      localStorage.setItem(tokenKey, token);
+    }
+    return token;
+  }
+
+  var guestToken = getGuestToken();
+
+  function setStatus(message) {
+    if (status) status.textContent = message;
+  }
+
+  function giftIdFromCard(card) {
+    var input = card.querySelector('.reserve-check');
+    return input ? input.id.replace('gift-', '') : '';
+  }
+
+  function giftNameFromCard(card) {
+    var title = card.querySelector('h3');
+    return title ? title.textContent.trim() : '';
+  }
+
+  function setDot(giftId, reserved) {
+    var dot = document.querySelector('.d' + giftId);
+    if (dot) dot.classList.toggle('saved-reserved', reserved);
+  }
+
+  function clearCard(card) {
+    var input = card.querySelector('.reserve-check');
+    var nameInput = card.querySelector('.guest-name');
+    var noteInput = card.querySelector('.guest-note');
+    var reservedBy = card.querySelector('.reserved-by');
+    var label = card.querySelector('.reserve-label');
+    var unreserved = card.querySelector('.unreserved');
+    var reserved = card.querySelector('.reserved');
+    var giftId = giftIdFromCard(card);
+
+    card.classList.remove('server-reserved');
+    card.classList.remove('owned-reservation');
+
+    if (input) {
+      input.checked = false;
+      input.disabled = false;
+    }
+
+    if (nameInput) {
+      nameInput.value = '';
+      nameInput.readOnly = false;
+    }
+
+    if (noteInput) {
+      noteInput.value = '';
+      noteInput.readOnly = false;
+    }
+
+    if (unreserved) unreserved.textContent = 'Reserve gift';
+    if (reserved) reserved.textContent = 'Reserved ✓';
+    if (label) label.removeAttribute('aria-disabled');
+
+    if (reservedBy) {
+      reservedBy.textContent = '';
+    }
+
+    setDot(giftId, false);
+  }
+
+  function lockCard(card, reservation) {
+    var input = card.querySelector('.reserve-check');
+    var nameInput = card.querySelector('.guest-name');
+    var noteInput = card.querySelector('.guest-note');
+    var reservedBy = card.querySelector('.reserved-by');
+    var label = card.querySelector('.reserve-label');
+    var unreserved = card.querySelector('.unreserved');
+    var reserved = card.querySelector('.reserved');
+    var giftId = giftIdFromCard(card);
+    var isOwner = reservation.ownerToken && reservation.ownerToken === guestToken;
+
+    card.classList.add('server-reserved');
+    card.classList.toggle('owned-reservation', !!isOwner);
+
+    if (input) {
+      input.checked = true;
+      input.disabled = true;
+    }
+
+    if (nameInput) {
+      nameInput.value = reservation.guestName || '';
+      nameInput.readOnly = true;
+    }
+
+    if (noteInput) {
+      noteInput.value = reservation.note || '';
+      noteInput.readOnly = true;
+    }
+
+    if (unreserved) unreserved.textContent = 'Reserved ✓';
+    if (reserved) reserved.textContent = 'Reserved ✓';
+    if (label) label.setAttribute('aria-disabled', 'true');
+
+    if (reservedBy) {
+      reservedBy.textContent = reservation.guestName ? ('Reserved by ' + reservation.guestName) : 'Reserved';
+      if (isOwner) {
+        reservedBy.textContent += ' — you can unreserve this gift';
+      }
+    }
+
+    setDot(giftId, true);
+  }
+
+  async function loadReservations() {
+    setStatus('Loading current reservations...');
+    try {
+      var response = await fetch('/.netlify/functions/get-reservations', { cache: 'no-store' });
+      var text = await response.text();
+      var data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        throw new Error('Function did not return JSON. Netlify Functions may not be deployed.');
+      }
+
+      if (!response.ok) throw new Error(data.error || 'Could not load reservations');
+
+      var reservations = data.reservations || {};
+      cards.forEach(function (card) {
+        var giftId = giftIdFromCard(card);
+        if (reservations[giftId]) {
+          lockCard(card, reservations[giftId]);
+        } else {
+          clearCard(card);
+        }
+      });
+
+      setStatus('Current reservations loaded.');
+    } catch (error) {
+      console.error(error);
+      setStatus('Reservations are not connected yet. Check Netlify Functions deployment.');
+    }
+  }
+
+  cards.forEach(function (card) {
+    var label = card.querySelector('.reserve-label');
+    var unreserveButton = card.querySelector('.unreserve-label');
+    var nameInput = card.querySelector('.guest-name');
+    var noteInput = card.querySelector('.guest-note');
+
+    if (label) {
+      label.addEventListener('click', async function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (card.classList.contains('server-reserved')) {
+          alert('This gift is already reserved.');
+          return false;
+        }
+
+        var guestName = nameInput ? nameInput.value.trim() : '';
+        var note = noteInput ? noteInput.value.trim() : '';
+        var giftId = giftIdFromCard(card);
+        var giftName = giftNameFromCard(card);
+
+        if (!guestName) {
+          if (nameInput) {
+            nameInput.focus();
+            nameInput.style.borderColor = '#c8a76a';
+            nameInput.style.boxShadow = '0 0 0 3px rgba(200,167,106,.18)';
+            setTimeout(function () {
+              nameInput.style.borderColor = '';
+              nameInput.style.boxShadow = '';
+            }, 1400);
+          }
+          alert('Please add your name before reserving this gift.');
+          return false;
+        }
+
+        label.classList.add('is-saving');
+        setStatus('Saving reservation...');
+
+        try {
+          var response = await fetch('/.netlify/functions/reserve-gift', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              giftId: giftId,
+              giftName: giftName,
+              guestName: guestName,
+              note: note,
+              ownerToken: guestToken
+            })
+          });
+
+          var data = await response.json();
+
+          if (response.status === 409) {
+            if (data.reservation) lockCard(card, data.reservation);
+            alert('Sorry, this gift has already been reserved.');
+            setStatus('That gift was already reserved.');
+            return false;
+          }
+
+          if (!response.ok) throw new Error(data.error || 'Reservation failed');
+
+          lockCard(card, data.reservation);
+          setStatus('Reservation saved. Thank you!');
+        } catch (error) {
+          console.error(error);
+          alert('Sorry, your reservation could not be saved. Please try again.');
+          setStatus('Reservation could not be saved. Check Netlify Functions.');
+        } finally {
+          label.classList.remove('is-saving');
+        }
+
+        return false;
+      });
+    }
+
+    if (unreserveButton) {
+      unreserveButton.addEventListener('click', async function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!card.classList.contains('owned-reservation')) {
+          alert('Only the person who reserved this gift on this device can unreserve it.');
+          return false;
+        }
+
+        var giftId = giftIdFromCard(card);
+
+        if (!confirm('Unreserve this gift?')) {
+          return false;
+        }
+
+        unreserveButton.disabled = true;
+        setStatus('Removing reservation...');
+
+        try {
+          var response = await fetch('/.netlify/functions/unreserve-gift', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              giftId: giftId,
+              ownerToken: guestToken
+            })
+          });
+
+          var data = await response.json();
+
+          if (response.status === 403) {
+            alert('Only the person who reserved this gift on this device can unreserve it.');
+            setStatus('Could not unreserve this gift.');
+            return false;
+          }
+
+          if (!response.ok) throw new Error(data.error || 'Unreserve failed');
+
+          clearCard(card);
+          setStatus('Gift unreserved.');
+        } catch (error) {
+          console.error(error);
+          alert('Sorry, this gift could not be unreserved. Please try again.');
+          setStatus('Could not unreserve this gift.');
+        } finally {
+          unreserveButton.disabled = false;
+        }
+
+        return false;
+      });
+    }
+  });
+
+  loadReservations();
+});
+</script>
+
+</body>
+</html>

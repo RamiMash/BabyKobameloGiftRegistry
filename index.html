@@ -44,7 +44,7 @@ h1{font-size:clamp(54px,10vw,112px);line-height:.92;margin:18px 0 8px}
 .section-sub{text-align:center;max-width:760px;margin:0 auto 30px;line-height:1.7}
 .voucher,.progress,.reserve-progress{background:linear-gradient(135deg,#fff,#fbf3e8);border:1px solid rgba(200,167,106,.35);border-radius:28px;padding:26px;box-shadow:var(--shadow);margin-bottom:26px;text-align:center}
 .voucher h2,.progress h2,.reserve-progress h2{font-size:34px;margin:0 0 8px}
-.progress-dots{display:grid;grid-template-columns:repeat(34,1fr);gap:4px;max-width:700px;margin:16px auto 0}
+.progress-dots{display:grid;grid-template-columns:repeat(40,1fr);gap:4px;max-width:700px;margin:16px auto 0}
 .progress-dots span{height:10px;border-radius:999px;background:#eadcc9}
 .registry:has(#gift-1:checked) .d1,
 .registry:has(#gift-2:checked) .d2,
@@ -79,7 +79,13 @@ h1{font-size:clamp(54px,10vw,112px);line-height:.92;margin:18px 0 8px}
 .registry:has(#gift-31:checked) .d31,
 .registry:has(#gift-32:checked) .d32,
 .registry:has(#gift-33:checked) .d33,
-.registry:has(#gift-34:checked) .d34{background:linear-gradient(90deg,var(--gold),#d7bc84)}
+.registry:has(#gift-34:checked) .d34,
+.registry:has(#gift-35:checked) .d35,
+.registry:has(#gift-36:checked) .d36,
+.registry:has(#gift-37:checked) .d37,
+.registry:has(#gift-38:checked) .d38,
+.registry:has(#gift-39:checked) .d39,
+.registry:has(#gift-40:checked) .d40{background:linear-gradient(90deg,var(--gold),#d7bc84)}
 .filter-radio{position:absolute;opacity:0;pointer-events:none}
 .filters{display:flex;gap:10px;overflow:auto;padding:8px 0 26px;margin:0 auto 10px;position:sticky;top:0;background:rgba(255,250,242,.95);z-index:2}
 .filters label{white-space:nowrap;border:1px solid rgba(123,87,55,.18);background:#fff;color:var(--brown);border-radius:999px;padding:10px 14px;font-family:'Poppins';font-weight:300;font-size:14px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
@@ -248,7 +254,7 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
     <section class="reserve-progress">
       <h2>🧸 Reserved Gifts</h2>
       <p>Gold segments show how many gifts have been reserved.</p>
-      <div class="progress-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span><span class="d6"></span><span class="d7"></span><span class="d8"></span><span class="d9"></span><span class="d10"></span><span class="d11"></span><span class="d12"></span><span class="d13"></span><span class="d14"></span><span class="d15"></span><span class="d16"></span><span class="d17"></span><span class="d18"></span><span class="d19"></span><span class="d20"></span><span class="d21"></span><span class="d22"></span><span class="d23"></span><span class="d24"></span><span class="d25"></span><span class="d26"></span><span class="d27"></span><span class="d28"></span><span class="d29"></span><span class="d30"></span><span class="d31"></span><span class="d32"></span><span class="d33"></span><span class="d34"></span></div>
+      <div class="progress-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span><span class="d6"></span><span class="d7"></span><span class="d8"></span><span class="d9"></span><span class="d10"></span><span class="d11"></span><span class="d12"></span><span class="d13"></span><span class="d14"></span><span class="d15"></span><span class="d16"></span><span class="d17"></span><span class="d18"></span><span class="d19"></span><span class="d20"></span><span class="d21"></span><span class="d22"></span><span class="d23"></span><span class="d24"></span><span class="d25"></span><span class="d26"></span><span class="d27"></span><span class="d28"></span><span class="d29"></span><span class="d30"></span><span class="d31"></span><span class="d32"></span><span class="d33"></span><span class="d34"></span><span class="d35"></span><span class="d36"></span><span class="d37"></span><span class="d38"></span><span class="d39"></span><span class="d40"></span></div>
       <p>Tap “Reserve gift” to fill a segment.</p>
     </section>
     <h2 class="section-title">🧸 Gift List</h2>
@@ -1121,6 +1127,162 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
     <div class="card-actions">
       <a class="view" href="https://azbaby.co.za/products/momcozy-baby-nasal-aspirator" target="_blank" rel="noopener">View gift</a>
       <label class="reserve-label" for="gift-34">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card travel">
+  <input class="reserve-check" type="checkbox" id="gift-35">
+  <div class="gift-inner">
+    <div class="tag">Travel &amp; Gear</div>
+    <h3>Noola Closer2You Baby Carrier</h3>
+    <p class="store">Amazon</p>
+    <p class="price">R1,700.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://amzn.eu/d/06bzm3Qk" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-35">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card travel">
+  <input class="reserve-check" type="checkbox" id="gift-36">
+  <div class="gift-inner">
+    <div class="tag">Travel &amp; Gear</div>
+    <h3>Car Interior Rearview Mirror - Cartoon Baby Safety Seat Viewing</h3>
+    <p class="store">Takealot</p>
+    <p class="price">R400.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.takealot.com/car-interior-rearview-mirror-cartoon-baby-safety-seat-viewing-mi/PLID93370040" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-36">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card sleep">
+  <input class="reserve-check" type="checkbox" id="gift-37">
+  <div class="gift-inner">
+    <div class="tag">Sleep &amp; Nursery</div>
+    <h3>Lulu Fleece Rocking Chair - Cream</h3>
+    <p class="store">Decofurn</p>
+    <p class="price">R2,199.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://decofurnsa.co.za/products/lulu-fleece-rocking-chair-cream" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-37">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card clothing">
+  <input class="reserve-check" type="checkbox" id="gift-38">
+  <div class="gift-inner">
+    <div class="tag">Clothing &amp; Essentials</div>
+    <h3>Snookums Medical Starter Kit</h3>
+    <p class="store">Babies R Us</p>
+    <p class="price">R179.90</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.babiesrus.co.za/snookums-medical-starter-kit-1174010" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-38">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card play">
+  <input class="reserve-check" type="checkbox" id="gift-39">
+  <div class="gift-inner">
+    <div class="tag">Seating &amp; Play</div>
+    <h3>Mellon Moon Reversible Baby Play Mat - Cloud/Construction Town</h3>
+    <p class="store">Takealot</p>
+    <p class="price">R2,000.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.takealot.com/mellon-moon-reversible-baby-play-mat-cloud-construction-town-180/PLID101458624" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-39">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+
+<article class="gift-card play">
+  <input class="reserve-check" type="checkbox" id="gift-40">
+  <div class="gift-inner">
+    <div class="tag">Seating &amp; Play</div>
+    <h3>Children's Illustrated Bible</h3>
+    <p class="store">Amazon</p>
+    <p class="price">R1,350.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://amzn.eu/d/0bn0mKLt" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-40">
         <span class="unreserved">Reserve gift</span>
         <span class="reserved">Reserved ✓</span>
       </label>

@@ -47,6 +47,7 @@ h1{font-size:clamp(54px,10vw,112px);line-height:.92;margin:18px 0 8px}
 .progress-dots{display:grid;grid-template-columns:repeat(40,1fr);gap:4px;max-width:700px;margin:16px auto 0}
 .progress-dots span{height:10px;border-radius:999px;background:#eadcc9}
 .registry:has(#gift-1:checked) .d1,
+.registry:has(#gift-2:checked) .d2,
 .registry:has(#gift-3:checked) .d3,
 .registry:has(#gift-4:checked) .d4,
 .registry:has(#gift-5:checked) .d5,
@@ -253,7 +254,7 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
     <section class="reserve-progress">
       <h2>🧸 Reserved Gifts</h2>
       <p>Gold segments show how many gifts have been reserved.</p>
-      <div class="progress-dots"><span class="d1"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span><span class="d6"></span><span class="d7"></span><span class="d8"></span><span class="d9"></span><span class="d10"></span><span class="d11"></span><span class="d12"></span><span class="d13"></span><span class="d14"></span><span class="d15"></span><span class="d16"></span><span class="d17"></span><span class="d18"></span><span class="d19"></span><span class="d20"></span><span class="d21"></span><span class="d22"></span><span class="d23"></span><span class="d24"></span><span class="d25"></span><span class="d26"></span><span class="d27"></span><span class="d28"></span><span class="d29"></span><span class="d30"></span><span class="d31"></span><span class="d32"></span><span class="d33"></span><span class="d34"></span><span class="d35"></span><span class="d36"></span><span class="d37"></span><span class="d38"></span><span class="d39"></span><span class="d40"></span></div>
+      <div class="progress-dots"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span><span class="d5"></span><span class="d6"></span><span class="d7"></span><span class="d8"></span><span class="d9"></span><span class="d10"></span><span class="d11"></span><span class="d12"></span><span class="d13"></span><span class="d14"></span><span class="d15"></span><span class="d16"></span><span class="d17"></span><span class="d18"></span><span class="d19"></span><span class="d20"></span><span class="d21"></span><span class="d22"></span><span class="d23"></span><span class="d24"></span><span class="d25"></span><span class="d26"></span><span class="d27"></span><span class="d28"></span><span class="d29"></span><span class="d30"></span><span class="d31"></span><span class="d32"></span><span class="d33"></span><span class="d34"></span><span class="d35"></span><span class="d36"></span><span class="d37"></span><span class="d38"></span><span class="d39"></span><span class="d40"></span></div>
       <p>Tap “Reserve gift” to fill a segment.</p>
     </section>
     <h2 class="section-title">🧸 Gift List</h2>
@@ -286,12 +287,62 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
   <input class="reserve-check" type="checkbox" id="gift-1">
   <div class="gift-inner">
     <div class="tag">Feeding &amp; Bottles</div>
-    <h3>BIBS Glass Baby Bottle Set 110ml – Sage</h3>
-    <p class="store">Baby &amp; Bear</p>
-    <p class="price">R360.00</p>
+    <h3>Baby Bottles Set</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R800.00</p>
     <div class="card-actions">
-      <a class="view" href="https://babyandbear.co.za/product/bibs-baby-glass-bottle-complete-set-110ml-sage/" target="_blank" rel="noopener">View gift</a>
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-511044140?utm_source=app&amp;utm_medium=nativeshare&amp;utm_campaign=appproductshare" target="_blank" rel="noopener">View gift</a>
       <label class="reserve-label" for="gift-1">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card soothers">
+  <input class="reserve-check" type="checkbox" id="gift-4">
+  <div class="gift-inner">
+    <div class="tag">Soothers &amp; Comfort</div>
+    <h3>Latex Pacifiers 2-Pack Size 1</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R249.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-510678272?utm_source=app&amp;utm_medium=nativeshare&amp;utm_campaign=appproductshare" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-4">
+        <span class="unreserved">Reserve gift</span>
+        <span class="reserved">Reserved ✓</span>
+      </label>
+      <button class="unreserve-label" type="button">Unreserve gift</button>
+    </div>
+    <div class="gift-note-area">
+      <label>Name</label>
+      <input type="text" class="guest-name" placeholder="Your name" required>
+      <small class="name-required-note">Required before reserving</small>
+      <label>Note</label>
+      <textarea class="guest-note" placeholder="Optional note"></textarea>
+    </div>
+    <div class="reserved-by"></div>
+  </div>
+</article>
+<article class="gift-card soothers">
+  <input class="reserve-check" type="checkbox" id="gift-2">
+  <div class="gift-inner">
+    <div class="tag">Soothers &amp; Comfort</div>
+    <h3>Pacifier Box</h3>
+    <p class="store">Woolworths</p>
+    <p class="price">R329.00</p>
+    <div class="card-actions">
+      <a class="view" href="https://www.woolworths.co.za/prod/_/A-510678264?utm_source=app&amp;utm_medium=nativeshare&amp;utm_campaign=appproductshare" target="_blank" rel="noopener">View gift</a>
+      <label class="reserve-label" for="gift-2">
         <span class="unreserved">Reserve gift</span>
         <span class="reserved">Reserved ✓</span>
       </label>
@@ -317,31 +368,6 @@ footer{text-align:center;padding:38px 18px;color:var(--soft)}
     <div class="card-actions">
       <a class="view" href="https://www.istore.co.za/eufy-wearable-breast-pump-e20-aebt6060321" target="_blank" rel="noopener">View gift</a>
       <label class="reserve-label" for="gift-3">
-        <span class="unreserved">Reserve gift</span>
-        <span class="reserved">Reserved ✓</span>
-      </label>
-      <button class="unreserve-label" type="button">Unreserve gift</button>
-    </div>
-    <div class="gift-note-area">
-      <label>Name</label>
-      <input type="text" class="guest-name" placeholder="Your name" required>
-      <small class="name-required-note">Required before reserving</small>
-      <label>Note</label>
-      <textarea class="guest-note" placeholder="Optional note"></textarea>
-    </div>
-    <div class="reserved-by"></div>
-  </div>
-</article>
-<article class="gift-card soothers">
-  <input class="reserve-check" type="checkbox" id="gift-4">
-  <div class="gift-inner">
-    <div class="tag">Soothers &amp; Comfort</div>
-    <h3>BIBS Colour Pacifiers 4-Pack – Ivory/Sand/Vanilla/Dark Oak</h3>
-    <p class="store">Bubba Due</p>
-    <p class="price">R499.00</p>
-    <div class="card-actions">
-      <a class="view" href="https://bubbadue.com/products/bibs-colour-pacifiers-dummies-4-pack-ivory-sand-vanilla-dark-oak" target="_blank" rel="noopener">View gift</a>
-      <label class="reserve-label" for="gift-4">
         <span class="unreserved">Reserve gift</span>
         <span class="reserved">Reserved ✓</span>
       </label>

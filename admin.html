@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Gift Registry Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#fffaf2;--cream:#f8efe3;--gold:#c8a76a;--brown:#7b5737;--ink:#412d1d;--soft:#a78665;--line:rgba(123,87,55,.15);--shadow:0 18px 45px rgba(90,61,35,.13)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:'Poppins',sans-serif;background:linear-gradient(180deg,var(--ivory),#fff 58%,#fbf3e8);color:var(--ink)}
+main{width:min(1100px,100%);margin:auto;padding:30px 18px 54px}
+.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin:12px 0 28px}
+.eyebrow{text-transform:uppercase;letter-spacing:.22em;font-size:12px;color:var(--gold);font-weight:600}
+h1{font-family:'Playfair Display',serif;font-size:clamp(38px,7vw,72px);line-height:.95;margin:10px 0;color:var(--brown)}
+.sub{max-width:620px;color:var(--soft);line-height:1.7;margin:0}
+button{border:0;border-radius:999px;padding:12px 18px;font-family:inherit;font-weight:500;cursor:pointer;background:var(--brown);color:white;box-shadow:0 10px 22px rgba(90,61,35,.12)}
+button.secondary{background:#fff;color:var(--brown);border:1px solid var(--line);box-shadow:none}
+button:disabled{opacity:.65;cursor:wait}
+.panel{background:rgba(255,255,255,.82);border:1px solid rgba(200,167,106,.28);border-radius:28px;box-shadow:var(--shadow);padding:24px}
+.login{display:grid;gap:14px;max-width:460px}
+.login label{display:grid;gap:7px;font-size:13px;color:var(--soft)}
+.login input{border:1px solid var(--line);border-radius:16px;padding:13px 14px;font:inherit;color:var(--ink);background:#fffaf4}
+.login input:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,167,106,.16)}
+.status{margin:14px 0 0;color:var(--soft);font-size:14px}
+.error{color:#9d3d2f}
+.hidden{display:none!important}
+.cards{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;margin-bottom:18px}
+.metric{background:#fff;border:1px solid rgba(200,167,106,.28);border-radius:22px;padding:22px;min-height:150px}
+.metric span{display:block;color:var(--soft);font-size:13px;text-transform:uppercase;letter-spacing:.14em}
+.metric strong{display:block;font-family:'Playfair Display',serif;color:var(--brown);font-size:clamp(34px,5vw,54px);line-height:1.05;margin:18px 0 8px;font-variant-numeric:tabular-nums}
+.metric small{color:var(--soft)}
+.bar{height:14px;background:#eadcc9;border-radius:999px;overflow:hidden;margin:18px 0}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#8b6a43);transition:width .35s ease}
+.summary-line{display:flex;justify-content:space-between;gap:12px;color:var(--soft);font-size:14px}
+.table-wrap{overflow:auto;border:1px solid rgba(200,167,106,.25);border-radius:22px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid rgba(123,87,55,.1);font-size:14px}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--soft);font-weight:600;background:#fffaf4}
+td.price{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-flex;align-items:center;border-radius:999px;padding:6px 10px;font-size:12px;background:#f8efe3;color:var(--soft)}
+.pill.reserved{background:#efe2c8;color:#7b5737}
+.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 18px}
+@media(max-width:760px){.top,.toolbar{display:grid}.cards{grid-template-columns:1fr}.panel{padding:18px}button{width:100%}}
+</style>
+</head>
+<body>
+<main>
+  <section class="top">
+    <div>
+      <div class="eyebrow">Private Admin</div>
+      <h1>Gift Registry Totals</h1>
+      <p class="sub">Enter the admin password to see the full registry value, the value already reserved, and the value still unreserved.</p>
+    </div>
+    <button id="logout" class="secondary hidden" type="button">Sign out</button>
+  </section>
+
+  <section id="login-panel" class="panel login">
+    <label>Password
+      <input id="password" type="password" autocomplete="current-password">
+    </label>
+    <button id="login" type="button">Unlock admin</button>
+    <p id="login-status" class="status">Enter the admin password to unlock the dashboard.</p>
+  </section>
+
+  <section id="dashboard" class="hidden">
+    <div class="cards">
+      <article class="metric">
+        <span>Total gift value</span>
+        <strong id="total-value">R0.00</strong>
+        <small id="total-count">0 gifts listed</small>
+      </article>
+      <article class="metric">
+        <span>Total reserved</span>
+        <strong id="reserved-value">R0.00</strong>
+        <small id="reserved-count">0 gifts reserved</small>
+      </article>
+      <article class="metric">
+        <span>Total unreserved</span>
+        <strong id="unreserved-value">R0.00</strong>
+        <small id="unreserved-count">0 gifts open</small>
+      </article>
+    </div>
+
+    <section class="panel">
+      <div class="toolbar">
+        <div>
+          <div class="eyebrow">Reservation Coverage</div>
+          <p id="updated" class="status">Loading totals...</p>
+        </div>
+        <button id="refresh" class="secondary" type="button">Refresh</button>
+      </div>
+      <div class="bar" aria-label="Reserved value progress"><span id="reserved-bar"></span></div>
+      <div class="summary-line"><span id="reserved-percent">0% reserved</span><span id="open-percent">100% unreserved</span></div>
+    </section>
+
+    <section class="panel" style="margin-top:18px">
+      <div class="toolbar">
+        <div class="eyebrow">Gift Breakdown</div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Gift</th><th>Category</th><th>Status</th><th>Price</th></tr>
+          </thead>
+          <tbody id="items"></tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+</main>
+
+<script>
+const currency = new Intl.NumberFormat('en-ZA', { style: 'currency', currency: 'ZAR' });
+const loginPanel = document.getElementById('login-panel');
+const dashboard = document.getElementById('dashboard');
+const loginButton = document.getElementById('login');
+const logoutButton = document.getElementById('logout');
+const refreshButton = document.getElementById('refresh');
+const status = document.getElementById('login-status');
+
+function setText(id, value) {
+  document.getElementById(id).textContent = value;
+}
+
+function getAdminPassword() {
+  return sessionStorage.getItem('registryAdminPassword') || '';
+}
+
+function setAdminPassword(password) {
+  sessionStorage.setItem('registryAdminPassword', password);
+}
+
+function clearAdminPassword() {
+  sessionStorage.removeItem('registryAdminPassword');
+}
+
+function showUnlocked() {
+  loginPanel.classList.add('hidden');
+  dashboard.classList.remove('hidden');
+  logoutButton.classList.remove('hidden');
+}
+
+function showLocked(message = 'Enter the admin password to unlock the dashboard.') {
+  dashboard.classList.add('hidden');
+  logoutButton.classList.add('hidden');
+  loginPanel.classList.remove('hidden');
+  status.textContent = message;
+}
+
+function render(data) {
+  const reservedPercent = data.totalValue ? Math.round((data.reservedValue / data.totalValue) * 1000) / 10 : 0;
+  const unreservedPercent = Math.round((100 - reservedPercent) * 10) / 10;
+
+  setText('total-value', currency.format(data.totalValue));
+  setText('reserved-value', currency.format(data.reservedValue));
+  setText('unreserved-value', currency.format(data.unreservedValue));
+  setText('total-count', `${data.totalGifts} gifts listed`);
+  setText('reserved-count', `${data.reservedGifts} gifts reserved`);
+  setText('unreserved-count', `${data.unreservedGifts} gifts open`);
+  setText('reserved-percent', `${reservedPercent}% reserved`);
+  setText('open-percent', `${unreservedPercent}% unreserved`);
+  setText('updated', `Updated ${new Date(data.updatedAt).toLocaleString()}`);
+  document.getElementById('reserved-bar').style.width = `${reservedPercent}%`;
+
+  document.getElementById('items').innerHTML = data.items.map((gift) => `
+    <tr>
+      <td>${gift.name}</td>
+      <td>${gift.category}</td>
+      <td><span class="pill ${gift.reserved ? 'reserved' : ''}">${gift.reserved ? 'Reserved' : 'Unreserved'}</span></td>
+      <td class="price">${currency.format(gift.price)}</td>
+    </tr>
+  `).join('');
+}
+
+async function loadSummary() {
+  refreshButton.disabled = true;
+  try {
+    const response = await fetch('/.netlify/functions/admin-registry-summary', {
+      cache: 'no-store',
+      headers: {
+        Accept: 'application/json',
+        'X-Admin-Password': getAdminPassword()
+      }
+    });
+
+    if (response.status === 401) {
+      clearAdminPassword();
+      showLocked('Incorrect admin password.');
+      return;
+    }
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Could not load totals.');
+
+    showUnlocked();
+    render(data);
+  } catch (error) {
+    setText('updated', error.message);
+  } finally {
+    refreshButton.disabled = false;
+  }
+}
+
+async function start() {
+  if (getAdminPassword()) {
+    showUnlocked();
+    await loadSummary();
+  }
+}
+
+loginButton.addEventListener('click', async () => {
+  const password = document.getElementById('password').value;
+
+  if (!password) {
+    status.classList.add('error');
+    status.textContent = 'Enter the admin password.';
+    return;
+  }
+
+  loginButton.disabled = true;
+  status.classList.remove('error');
+  status.textContent = 'Checking password...';
+
+  try {
+    setAdminPassword(password);
+    status.textContent = '';
+    await loadSummary();
+  } catch (error) {
+    clearAdminPassword();
+    status.classList.add('error');
+    status.textContent = error.message;
+  } finally {
+    loginButton.disabled = false;
+  }
+});
+
+logoutButton.addEventListener('click', () => {
+  clearAdminPassword();
+  document.getElementById('password').value = '';
+  showLocked('Admin dashboard locked.');
+});
+
+refreshButton.addEventListener('click', loadSummary);
+start();
+</script>
+</body>
+</html>

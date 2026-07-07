@@ -22,7 +22,7 @@ export const gifts = [
   { id: "gift-21", name: "Momcozy KleanPal Pro Baby Bottle Washer - EU Plug", category: "feeding", price: 6000 },
   { id: "gift-22", name: "Bundled Baby Development Books", category: "travel", price: 850 },
   { id: "gift-23", name: "Bolsa Maternity Bag - Green", category: "travel", price: 1400 },
-  { id: "gift-24", name: "Stainless Steel Flask", category: "clothing", price: 400 },
+  { id: "gift-24", name: "The Illustrated Children's Bible", category: "play", price: 325 },
   { id: "gift-25", name: "Portable Baby Carrier Toddler Wrap - Multifunctional Shoulders (Khaki)", category: "travel", price: 550 },
   { id: "gift-26", name: "Bath Stand - Emerald Baby", category: "nappy", price: 1000 },
   { id: "gift-27", name: "Fringe Muslin Blanket", category: "clothing", price: 299 },

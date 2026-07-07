@@ -6,7 +6,7 @@ export const gifts = [
   { id: "gift-5", name: "Plush Character Snuggle Pillow - Assorted", category: "soothers", price: 419.9 },
   { id: "gift-6", name: "Shnuggle Dreami Moses Basket and Stand", category: "sleep", price: 2800 },
   { id: "gift-7", name: "Shnuggle Dreami Quilted Moses Basket Mattress", category: "sleep", price: 699 },
-  { id: "gift-8", name: "Baby Safe Nest Sleeping Pod - Beige Checkered", category: "sleep", price: 650 },
+  { id: "gift-8", name: "Snuggletime Comfort Safety Pod - Snow", category: "sleep", price: 649 },
   { id: "gift-9", name: "Royal 3-in-1 Swing & High Chair - Beige", category: "play", price: 4250 },
   { id: "gift-10", name: "The Lumi Seat 5-in-1 Multifunctional Baby Chair", category: "play", price: 1990 },
   { id: "gift-11", name: "Wooden Baby Play Gym Toys", category: "play", price: 800 },
@@ -22,7 +22,7 @@ export const gifts = [
   { id: "gift-21", name: "Momcozy KleanPal Pro Baby Bottle Washer - EU Plug", category: "feeding", price: 6000 },
   { id: "gift-22", name: "Bundled Baby Development Books", category: "travel", price: 850 },
   { id: "gift-23", name: "Bolsa Maternity Bag - Green", category: "travel", price: 1400 },
-  { id: "gift-24", name: "Stainless Steel Flask", category: "clothing", price: 400 },
+  { id: "gift-24", name: "The Illustrated Children’s Bible", category: "play", price: 325 },
   { id: "gift-25", name: "Portable Baby Carrier Toddler Wrap - Multifunctional Shoulders (Khaki)", category: "travel", price: 550 },
   { id: "gift-26", name: "Bath Stand - Emerald Baby", category: "nappy", price: 1000 },
   { id: "gift-27", name: "Fringe Muslin Blanket", category: "clothing", price: 299 },
@@ -38,5 +38,5 @@ export const gifts = [
   { id: "gift-37", name: "Lulu Fleece Rocking Chair - Cream", category: "sleep", price: 2199 },
   { id: "gift-38", name: "Snookums Medical Starter Kit", category: "clothing", price: 179.9 },
   { id: "gift-39", name: "Mellon Moon Reversible Baby Play Mat - Cloud/Construction Town", category: "play", price: 2000 },
-  { id: "gift-40", name: "Children's Illustrated Bible", category: "play", price: 1350 }
+  { id: "gift-40", name: "The Illustrated Children’s Bible", category: "play", price: 325 }
 ];

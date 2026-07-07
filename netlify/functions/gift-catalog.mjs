@@ -6,7 +6,7 @@ export const gifts = [
   { id: "gift-5", name: "Plush Character Snuggle Pillow - Assorted", category: "soothers", price: 419.9 },
   { id: "gift-6", name: "Shnuggle Dreami Moses Basket and Stand", category: "sleep", price: 2800 },
   { id: "gift-7", name: "Shnuggle Dreami Quilted Moses Basket Mattress", category: "sleep", price: 699 },
-  { id: "gift-8", name: "Baby Safe Nest Sleeping Pod - Beige Checkered", category: "sleep", price: 650 },
+  { id: "gift-8", name: "Snuggletime Comfort Safety Pod - Snow", category: "sleep", price: 649 },
   { id: "gift-9", name: "Royal 3-in-1 Swing & High Chair - Beige", category: "play", price: 4250 },
   { id: "gift-10", name: "The Lumi Seat 5-in-1 Multifunctional Baby Chair", category: "play", price: 1990 },
   { id: "gift-11", name: "Wooden Baby Play Gym Toys", category: "play", price: 800 },

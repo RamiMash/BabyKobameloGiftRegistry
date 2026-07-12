@@ -33,10 +33,11 @@ export const gifts = [
   { id: "gift-32", name: "Night Light For Kids", category: "sleep", price: 1040 },
   { id: "gift-33", name: "Fisher-Price Soothe 'n Snuggle Otter Plush Musical Soother", category: "soothers", price: 769.9 },
   { id: "gift-34", name: "Momcozy Baby Nasal Aspirator", category: "feeding", price: 650 },
-  { id: "gift-35", name: "Noola Closer2You Baby Carrier", category: "travel", price: 1700 },
+  { id: "gift-35", name: "Snuggleroo Deluxe Baby Wrap", category: "travel", price: 1200 },
   { id: "gift-36", name: "Car Interior Rearview Mirror - Cartoon Baby Safety Seat Viewing", category: "travel", price: 400 },
   { id: "gift-37", name: "Lulu Fleece Rocking Chair - Cream", category: "sleep", price: 2199 },
   { id: "gift-38", name: "Snookums Medical Starter Kit", category: "clothing", price: 179.9 },
   { id: "gift-39", name: "Mellon Moon Reversible Baby Play Mat - Cloud/Construction Town", category: "play", price: 2000 },
-  { id: "gift-40", name: "The Illustrated Children’s Bible", category: "play", price: 325 }
+  { id: "gift-40", name: "The Illustrated Children’s Bible", category: "play", price: 325 },
+  { id: "gift-41", name: "Floating Bather Cushion", category: "nappy", price: 150 }
 ];
